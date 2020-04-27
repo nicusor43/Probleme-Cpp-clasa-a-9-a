@@ -5,56 +5,18 @@ using namespace std;
 int t[101][101];
 
 int main(){
-   int n, m, i, j, sus, jos, st, dr, cont = 1;
+   int n, m, i, j, sus = 1000, jos = -1000, st = 1000, dr = -1000;
    cin>>n>>m;
    for(i=1; i<=n; i++)
       for(j=1; j<=m; j++)
          cin>>t[i][j];
 
-
-   for(i=1; i<=n && cont; i++) {
-      for(j=1; j<=m && cont; j++)
-      {
-         if(t[i][j] == 1){
-            cont = 0;
-            sus = i;
-         }
-      }
-   }
-
-   cont = 1;
-
-   for(i=1; i<=n && cont; i++) {
-      for(j=1; j<=m && cont; j++)
-      {
-         if(t[j][i] == 1){
-            cont = 0;
-            st = i;
-         }
-      }
-   }
-
-   cont = 1;
-
-   for(i=m; i>=1 && cont; i--) {
-      for(j=1; j<=m && cont; j++)
-      {
-         if(t[i][j] == 1){
-            cont = 0;
-            jos = i;
-         }
-      }
-   }
-
-   cont = 1;
-
-   for(i=m; i>=1 && cont; i--) {
-      for(j=1; j<=m && cont; j++)
-      {
-         if(t[j][i] == 1){
-            cont = 0;
-            dr = i;
-         }
+   for(i=1; i<=n; i++){
+      for(j=1; j<=m; j++){
+         if((j < st) && (t[i][j] == 1))   st = j;
+         if((j > dr) && (t[i][j] == 1))  dr = j;
+         if((i < sus)  && (t[i][j] == 1)) sus = i;
+         if((i > jos) && (t[i][j] == 1)) jos = i;
       }
    }
 
