@@ -12,7 +12,7 @@ int main(){
 	int m, n, i, j, nr_cifre, nr_total = 0, nr_linii = 1, ma = -100000, suma_prime = 0, x, prim;
 	f >> m >> n;
 	cout << m << " " << n;
-	/*
+
 	for(i = 1; i <= m; i++){
 		for(j = 1; j <= n; j++){
 			f >> a[i][j];
@@ -96,7 +96,7 @@ int main(){
 		cout << "suma primelor: " << suma_prime;
 	}
 	else cout << "tabloul nu e patratic";
-      */
+
 
 
 }
