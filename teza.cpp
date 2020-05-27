@@ -4,14 +4,14 @@
 
 using namespace std;
 
-ifstream f("cv.in");
+ifstream f("date.in");
 
 int a[1000][1000];
 
 int main(){
 	int m, n, i, j, nr_cifre, nr_total = 0, nr_linii = 1, ma = -100000, suma_prime = 0, x, prim;
 	f >> m >> n;
-	cout << m << " " << n;
+
 
 	for(i = 1; i <= m; i++){
 		for(j = 1; j <= n; j++){
@@ -27,11 +27,11 @@ int main(){
 				ma = a[i][j];
 				nr_linii = 1;
 			}
-			if(a[i][j] == ma) nr_linii++;
+			else if(a[i][j] == ma) nr_linii++;
 		}
 	}
 
-	cout << nr_cifre << " cifre" << endl;
+	cout << nr_total << " cifre" << endl;
 	cout <<	nr_linii << " contin " << ma << endl;
 
 
